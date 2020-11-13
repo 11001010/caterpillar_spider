@@ -62,6 +62,8 @@ def add_water_marker( imgPath):
 
 # 保存图片、加水印      
 def save_image(imgs_url_and_size_str):
+    if imgs_url_and_size_str is None:
+        return
     # https://leaveastory.com/wp-content/uploads/2018/03/359-500x500.png 500w
     img_url = imgs_url_and_size_str.split(" ")[0]
     img_name = pattern.findall(img_url)
@@ -75,5 +77,5 @@ if __name__ == "__main__":
     i = 0
     flag = 1
     # 仅下载前9页
-    for i  in  range(1,10):
+    for i  in  range(1,2):
         getImg("https://leaveastory.com/?vp_page=%s" % str(i),flag)
